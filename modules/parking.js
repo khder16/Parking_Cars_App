@@ -42,7 +42,6 @@ const parkingSchema = new Schema({
     ]
 })
 
-// parkingSchema.index({ parkingName: 1, location: "2dsphere" })
 parkingSchema.index({ location: "2dsphere" })
 
 export default model('Parking', parkingSchema)

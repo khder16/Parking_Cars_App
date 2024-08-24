@@ -1,6 +1,11 @@
 import Admin from "../modules/Admins.js";
 import parking from "../modules/parking.js";
 
+
+
+// Register Admin Function
+
+
 export const registerAdmin = async (req, res,) => {
     try {
         const { email, password, confirmPassword, username, firstName, lastName, ParkNumber } = req.body
@@ -28,7 +33,7 @@ export const registerAdmin = async (req, res,) => {
         if (!validator.isLength(lastName, { min: 1, max: 10 })) {
             return res.status(400).json({ message: 'Last Name is required' });
         }
-        const isExist = await Admins.findOne({ $or: [{ email }, { username }] })
+        const isExist = await Admin.findOne({ $or: [{ email }, { username }] })
         if (isExist) {
             return res.status(409).json({ message: 'email is already exsisted Pleas Input another email' })
         }
@@ -44,10 +49,12 @@ export const registerAdmin = async (req, res,) => {
         return res.status(200).json({ message: 'Done Sucessfuly' })
 
     } catch (error) {
-        throw new Error(error)
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message })
+
     }
 }
 
+// Login Admin Function
 
 export const loginAdmin = async (req, res) => {
     try {
@@ -59,7 +66,7 @@ export const loginAdmin = async (req, res) => {
         if (user) {
             return res.status(StatusCodes.BAD_REQUEST).json({ message: "Please Log in as a user" })
         }
-        const admin = await Admins.findOne({ email }).select("firstName  lastName email password role  username");
+        const admin = await Admin.findOne({ email }).select("firstName  lastName email password role  username");
         if (!admin) {
             return res.status(400).json({ message: "Password or email may be incorrect" });
         }
@@ -74,38 +81,48 @@ export const loginAdmin = async (req, res) => {
         }
 
     } catch (error) {
-        console.log(error);
-        res.status(500).json(error);
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message })
+
     }
 }
+
+// Showl all parks for the Admin
+
 export const getMyParks = async (req, res) => {
-    const { AdminEmail } = req.body
-    if (!AdminEmail) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ messgae: 'Please provide full info ' })
-    }
-    const Admin1 = await Admins.findOne({ email: AdminEmail })
-    if (!Admin1) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ message: " Admin Not Found" })
-    }
-    const parks = await parking.find({ Admin: Admin1._id }).select('location.parkingName location.Price ')
-    if (!parks) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ message: "You Don't have any parks " })
-    }
+    try {
+        const { AdminEmail } = req.body
+        if (!AdminEmail) {
+            return res.status(StatusCodes.BAD_REQUEST).json({ messgae: 'Please provide full info ' })
+        }
+        const Admin1 = await Admin.findOne({ email: AdminEmail })
+        if (!Admin1) {
+            return res.status(StatusCodes.BAD_REQUEST).json({ message: " Admin Not Found" })
+        }
+        const parks = await parking.find({ Admin: Admin1._id }).select('location.parkingName location.Price ')
+        if (!parks) {
+            return res.status(StatusCodes.BAD_REQUEST).json({ message: "You Don't have any parks " })
+        }
 
-    return res.status(StatusCodes.OK).json(parks)
+        return res.status(StatusCodes.OK).json(parks)
+    } catch (error) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message })
+
+    }
 }
 
-
+// Logout 
 export const logoutAdmin = async (req, res) => {
     try {
         const token = '';
         res.cookie('token', token)
         res.status(200).json({ token });
     } catch (error) {
-        res.status(500).json(error);
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message })
+
     }
 }
 
+// Add new Park by Admin
 
 export const addPark = async (req, res) => {
     try {
@@ -121,7 +138,6 @@ export const addPark = async (req, res) => {
             filled: false,
             carNumber: "",
         }));
-        ////////////////////////////////////////
         ///find The Admin
         const AdminId = await Admin.findOne({ email: AdminEmail })
         if (!AdminId) {
@@ -140,7 +156,6 @@ export const addPark = async (req, res) => {
                 { 'location.parkingName': parkingName }
             ]
         });
-        //console.log(parks);
         if (existingPark) {
             return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Park Already Found' })
         }
@@ -158,11 +173,11 @@ export const addPark = async (req, res) => {
         return res.status(StatusCodes.OK).json({ message: "done Sucessfuly" })
 
     } catch (error) {
-        console.error(error);
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "Internal Server Error" })
-
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message })
     }
 }
+
+// Edit park Information 
 export const editPark = async (req, res) => {
     try {
 
@@ -173,7 +188,7 @@ export const editPark = async (req, res) => {
 
 
 
-        const Admin = await Admins.findOne({ email: AdminEmail })
+        const Admin = await Admin.findOne({ email: AdminEmail })
         if (!Admin) {
             return res.status(StatusCodes.BAD_REQUEST).json({ message: "Admin Not Found" })
         }
@@ -190,17 +205,15 @@ export const editPark = async (req, res) => {
         AdminPark.location.Price = newPrice || Price
         await AdminPark.save()
 
-        console.log(AdminPark);
-
-
-
-
+        
         return res.status(StatusCodes.OK).json({ message: "Done Sucessfuly" })
     } catch (error) {
         console.error(error)
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ messgae: "internal server Error" })
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message })
     }
 }
+
+
 export const Settings = async (req, res) => {
     try {
 
@@ -208,7 +221,7 @@ export const Settings = async (req, res) => {
         if (!AdminEmail || !username) {
             return res.status(StatusCodes.BAD_REQUEST).json({ message: "Please Provide Full info" })
         }
-        const AdminInfo = await Admins.findOne({ email: AdminEmail })
+        const AdminInfo = await Admin.findOne({ email: AdminEmail })
         if (!AdminInfo) {
             return res.status(StatusCodes.BAD_REQUEST).json({ message: "Admin Not Found" })
         }
@@ -219,7 +232,6 @@ export const Settings = async (req, res) => {
 
         return res.status(StatusCodes.OK).json({ message: AdminInfo })
     } catch (error) {
-        console.error(error)
-
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message })
     }
 }

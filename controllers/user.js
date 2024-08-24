@@ -62,8 +62,6 @@ export const register = async (req, res,) => {
         await newUser.save()
         await SendVerifyCode(email)
 
-        //console.log(newUser);
-
         return res.status(200).json({ message: 'Done Sucessfuly' })
 
     } catch (error) {
@@ -100,7 +98,8 @@ export const login = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).json(error);
+        return res.status(500).json({message:error.message});
+
     }
 }
 
@@ -154,15 +153,13 @@ export const verifyCode = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ message: error });
+        return res.status(500).json({message:error.message});
+
     }
 };
 
 
-export const
-
-
-    forgotPassword = async (req, res) => {
+export const forgotPassword = async (req, res) => {
         try {
             const email = req.body.email
             if (!validator.isEmail(email)) {
@@ -182,7 +179,8 @@ export const
             return res.status(200).json({ message: "Password reset email sent" });
         } catch (error) {
             console.log(error);
-            return res.status(500).json({ message: "Error processing request" });
+            return res.status(500).json({message:error.message});
+
         }
     }
 
@@ -208,7 +206,8 @@ export const resetPassword = async (req, res) => {
     }
     catch (error) {
         console.log(error);
-        return res.status(500).json({ message: "error" })
+        return res.status(500).json({message:error.message});
+
 
     }
 }
@@ -238,7 +237,7 @@ export const verifyResetPasswordCode = async (req, res) => {
             return res.status(200).json({ message: "Code verified successfully" });
         }
     } catch (error) {
-        throw new Error(error);
+     return res.status(500).json({message:error.message});
     }
 };
 
@@ -258,7 +257,8 @@ export const sendCode = async (req, res) => {
         return res.status(200).json({ verifyEmailCode: sentUser.verifyEmailCode });
     } catch (error) {
         console.log(error);
-        throw new Error(error)
+        return res.status(500).json({message:error.message});
+
     }
 
 };
@@ -320,7 +320,7 @@ export const UpdateUser = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: `and error occured : ${error}` })
+        return res.status(500).json({message:error.message});
 
     }
 };
@@ -333,6 +333,6 @@ export const getDeviceLang = async (req, res) => {
         return res.status(200).json({ deviceLanguage: req.language })
     } catch (error) {
         console.log(error);
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: `and error occured : ${error}` })
+        return res.status(500).json({message:error.message});
     }
 }

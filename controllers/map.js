@@ -1,6 +1,6 @@
 
 import parking from "../modules/parking.js";
-import  {StatusCodes}from 'http-status-codes'
+import { StatusCodes } from 'http-status-codes'
 
 import User from '../modules/users.js';
 
@@ -11,75 +11,52 @@ export const getParkingLocations = async (req, res) => {
         const { userLatitude, userLongitude } = req.body;
         console.log(userLatitude);
         console.log(userLongitude);
-       
+
+            if(!userLatitude && !userLongitude) {
+                return res.status(StatusCodes.NotFound).json({message:"Please Provide UserLatitude and UserLangtitude"})
+            }
         const parkingLocations = await parking.find({
             location: {
                 $near: {
                     $geometry: {
                         type: "Point",
-                        coordinates: [userLongitude, userLatitude] 
+                        coordinates: [userLongitude, userLatitude]
                     },
-                   // $maxDistance: 10000000000  // Maximum distance in meters (10 km)
+                    $maxDistance: 100000 // Maximum distance in meters 
                 }
             }
-        }, { parkingName: 1, location: 1,parkingNumber:1 ,})
+        }, { parkingName: 1, location: 1, parkingNumber: 1, })
             .lean();
-            
-            console.log(parkingLocations);
-        return res.status(200).json({parkingLocations:parkingLocations});
+
+        console.log(parkingLocations);
+        return res.status(200).json({ parkingLocations: parkingLocations });
 
     } catch (error) {
         console.log(error);
-        res.status(400).json({ msg:"Please Provide UserLatitude and UserLangtitude" });
+        res.status(400).json({ message: error.message });
     }
 }
-export const  getParkingSpots = async(req,res)=>{
+export const getParkingSpots = async (req, res) => {
     try {
-        const  {ParkingNumber ,username}= req.body 
-        if(!ParkingNumber){
-           return  res.status(StatusCodes.BAD_REQUEST).json({message : " Please Provide Park Number"})
-            
+        const { ParkingNumber, username } = req.body
+        if (!ParkingNumber) {
+            return res.status(StatusCodes.BAD_REQUEST).json({ message: " Please Provide Park Number" })
+
         }
-        let ParkingSpots= await parking.findOne({'location.parkingNumber':ParkingNumber}).select('park location.parkingName location.Price')
-       //console.log(ParkingSpots.park[1]);
-    //    let ParkingSpot ;
-    //    for (let i in ParkingSpots.park){
-    //     if(ParkingSpots.park[i].filled==false){
-    //         ParkingSpot=i
-    //         break
-            
-    //     }
-        
-       
-    //    }
-    //    ParkingSpots.park[ParkingSpot].Spot=true
+        let ParkingSpots = await parking.findOne({ 'location.parkingNumber': ParkingNumber }).select('park location.parkingName location.Price')
 
-    //    console.log(ParkingSpots.park[ParkingSpot]);
-             
+        const spots = ParkingSpots.park.find(object => object.filled != true)
+        if (!spots) {
+            return res.status(StatusCodes.BAD_REQUEST).json({ message: "no empty Spots Availabel in Parking Place" })
+        }
 
-          // console.log(ParkingSpots);
-     //  await   Object.assign(ParkingSpots,{'hashem':true})
-     //const spot =  Park.park.find(object=>object.parkNumber==user.bookedPark.parkNumber)
-     const spots =ParkingSpots.park.find(object=>object.filled !=true )
-     if(!spots){
-        return res.status(StatusCodes.BAD_REQUEST).json({message:"no empty Spots Availabel in Parking Place"})
-     }
-     
-
-     const user  = await User.findOne({username :username})
-    //  if(user.bookedPark.ChoosedParkName){
-    //     return res.status(StatusCodes.BAD_REQUEST).json({message :'You have been Already Parked'})
-    //  }
-    //  console.log(spots);
+        const user = await User.findOne({ username: username })
         return res.status(StatusCodes.OK).json(ParkingSpots)
 
-
-
-    
     } catch (error) {
         console.log(error);
-        return res.status(StatusCodes.BAD_REQUEST).json({message:"Internal Server Error"})
-        
+        return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message })
+
     }
 
 

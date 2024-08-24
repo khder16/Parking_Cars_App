@@ -1,10 +1,10 @@
 import {Router} from 'express'
 const router=Router()
 import {NumberOfParksByLocation,TotalRevenu,NumberOfLocationsByPark ,TotalRevenuByPark,RepairOrdersByproblem} from '../controllers/Statsics.js'
-router.route('/numberofparks').post(NumberOfParksByLocation)
-router.route('/totalRevenu').post(TotalRevenu)
-router.route('/numberoflocationbypark').post(NumberOfLocationsByPark)
-router.route('/TotalRevenueByPark').post(TotalRevenuByPark)
-router.route('/RepairOrdersByproblem').post(RepairOrdersByproblem)
+router.route('/numberofparks').get(NumberOfParksByLocation)
+router.route('/totalRevenu').get(TotalRevenu)
+router.route('/numberoflocationbypark').get(NumberOfLocationsByPark)
+router.route('/TotalRevenueByPark').get(TotalRevenuByPark)
+router.route('/RepairOrdersByproblem').get(RepairOrdersByproblem)
 
 export default router

@@ -6,7 +6,7 @@ const ParkingOrderSchema = new Schema({
         required: true,
 
     },
-    SelectedPark: {
+    selectedPark: {
         type: Schema.ObjectId,
         ref: 'Parking',
         required: true,

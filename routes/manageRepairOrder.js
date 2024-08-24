@@ -5,10 +5,9 @@ import { allRepairOrdersList, deleteRepairOrder, updateRepairOrderStatuse } from
 import { verifyToken } from '../middleware/verifyToken.js'
 
 
-router.route('/getAll-repairOrder').post(verifyToken, allRepairOrdersList);
-router.route('/delete-repairOrder').post(verifyToken, deleteRepairOrder);
-router.route('/update-repairOrder').post(verifyToken, updateRepairOrderStatuse);
-
+router.get('/all-repair-orders', verifyToken, allRepairOrdersList);
+router.delete('/delete-repair-order/:orderId', verifyToken, deleteRepairOrder); 
+router.put('/update-repair-order/:orderId', verifyToken, updateRepairOrderStatuse);
 
 
 

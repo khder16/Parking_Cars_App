@@ -42,7 +42,7 @@ export const deleteRepairOrder = async (req, res) => {
 
 export const updateRepairOrderStatuse = async (req, res) => {
     try {
-        const { orderId, price, date } = req.body;  // Add fcmToken to the request body
+        const { orderId, price, date } = req.body;
         if (!orderId) {
             return res.status(400).json({ message: "orderId not found" });
         }
@@ -71,16 +71,11 @@ export const updateRepairOrderStatuse = async (req, res) => {
             return res.status(StatusCodes.BAD_REQUEST).json({ message: `user hasn't been found` })
         }
         const fcmToken = user.fcmToken
-        // await repairOrder.save();
 
         // Store notification in the database
         const message = `Your repair order has been updated with a price of $${price} and will be ready by ${date}.`;
 
-        // const notification = new Notification({
-        //     userId: userId,
-        //     message: message,
 
-        // });
         const notification = await Notification.create({
             userId: userId,
             message: message,
