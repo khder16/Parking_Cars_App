@@ -1,0 +1,157 @@
+
+{
+    "all_input_required": "All input is required",
+    "invalid_email": "Invalid Email",
+    "password_min_length": "Password should be at least 6 characters long",
+    "confirm_password_min_length": "Confirm Password should be at least 6 characters long",
+    "passwords_not_match": "The password and confirm password are not the same",
+    "username_required": "Username is required",
+    "first_name_required": "First Name is required",
+    "last_name_required": "Last Name is required",
+    "email_username_exists": "Email or username already exists. Please input another email or username.",
+    "registration_successful": "Registration successful",
+    "internal_server_error": "Internal server error",
+    "provide_email_password": "Please provide email and password to login",
+    "login_as_user": "Please log in as a user",
+    "incorrect_email_password": "Password or email may be incorrect",
+    "login_successful": "Login successful",
+    "admin_logged_in": "%s logged in",
+    "provide_full_info": "Please provide full information",
+    "admin_not_found": "Admin Not Found",
+    "no_parks_found": "You don't have any parks",
+    "park_already_found": "Park Already Found",
+    "no_park_with_name": "There is no park with the specified name",
+    "done_successfully": "Done Successfully"
+  }
+
+
+
+  {
+    "parking": {
+      "missingInputs": "All inputs are required",
+      "parkingNotFound": "Parking not found",
+      "userNotValid": "User is not valid, please check the username",
+      "noEmptyParks": "No empty parks available",
+      "bookingFailed": "Booking failed"
+    },
+    "repair": {
+      "userNameNotFound": "Username not found",
+      "parkNumberNotFound": "Park number not found",
+      "carNotFound": "Couldn't find car for this user",
+      "invalidProblem": "Please provide a valid problem",
+      "noEmptyRepairParks": "No empty repair parks available",
+      "orderNotCreated": "Order did not created"
+    },
+    "admin": {
+      "adminNotFound": "Admin not found"
+    },
+    "timer": {
+      "noActiveBooking": "No active parking booking found",
+      "noParkChosen": "You haven't chosen any park yet",
+      "parkingNotStarted": "Parking time hasn't started yet",
+      "parkingTimeEnded": "Parking time has ended"
+    },
+    "expand": {
+      "noUsername": "Please provide username",
+      "userNotFound": "Couldn't find user",
+      "noBookingYet": "You haven't booked any park yet",
+      "parkNotFound": "Couldn't find park",
+      "orderNotFound": "Order not found",
+      "success": "Done successfully"
+    },
+    "cancel": {
+      "emailNotFound": "Email not found",
+      "userNotFound": "User not found",
+      "noBookingYet": "You haven't booked yet",
+      "success": "Cancelled successfully",
+      "serverError": "Internal server error"
+    }
+  }
+
+
+  {
+    "repairOrders": {
+      "noOrders": "There are no repair orders to show",
+      "delete": {
+        "missingId": "Please provide order ID",
+        "notFound": "Order not found",
+        "success": "Order deleted successfully"
+      },
+      "update": {
+        "missingId": "Order ID not found",
+        "missingData": "Please provide price and completion date",
+        "notFound": "Order cannot be found",
+        "success": "Order status updated successfully"
+      },
+      "user": {
+        "notFound": "User not found"
+      }
+    },
+    "notifications": {
+      "repairUpdate": "Your repair order has been updated with a price of ${{price}} and will be ready by {{date}}."
+    },
+    "errors": {
+      "serverError": "Internal server error"
+    }
+  }
+
+  {
+    { "orders":{
+      "provide_username": "Please Provide User Name",
+      "user_not_found": "User Not Found",
+      "no_parking_orders": "No Orders were Found To This user",
+      "no_repair_orders": "No Orders For This User",
+      "error_occurred": "An Error Occurred",
+      "provide_order_id": "Please Provide Order ID",
+      "order_not_found": "Couldn't find the order",
+      "deleted_successfully": "Deleted Successfully"
+    },
+  }
+}
+
+{"pro_benefits": [
+  "35% Discount on every service",
+  "Ad-Free Experience",
+  "Access to our dedicated customer support team"
+],
+"provide_full_info": "Please Provide Full info",
+"user_not_found": "Couldn't find user",
+"pro_upgrade_success": "You have become a pro user",
+"internal_server_error": "Internal server error"
+}
+
+
+{
+  "user":{
+    "all_input_required": "All input is required",
+    "invalid_email": "Invalid Email",
+    "password_length_error": "Password should be at least 6 characters long",
+    "confirm_password_length_error": "Confirm Password should be at least 6 characters long",
+    "password_mismatch": "The password and confirm password are not the same",
+    "username_required": "Username is required (3-10 characters)",
+    "firstname_required": "First Name is required (1-10 characters)",
+    "lastname_required": "Last Name is required (1-10 characters)",
+    "email_exists": "Email already exists. Please use another email",
+    "registration_success": "Registration successful",
+    "login_credentials_required": "Please provide email and password to login",
+    "admin_login_redirect": "Please log in through the admin portal",
+    "email_not_verified": "Please verify your email and try again",
+    "login_success": "Login successful",
+    "invalid_credentials": "Password or email may be incorrect",
+    "logout_success": "Logout successful",
+    "code_length_error": "Enter 6-digit code",
+    "user_not_found": "User not found",
+    "incorrect_code": "Code is incorrect",
+    "expired_code": "Code has expired. Please request a new one",
+    "code_verified": "Code verified successfully",
+    "update_not_found": "User not found after update",
+    "password_reset_email_sent": "Password reset email sent",
+    "passwords_not_match": "Passwords do not match",
+    "password_reset_success": "Password reset successful. Please login again",
+    "email_required": "Please provide email",
+    "update_full_info_required": "Please provide all required information",
+    "car_not_found": "Cannot find specified car for this user",
+    "unsupported_language": "Unsupported language. Use 'en' or 'ar'",
+    "email_sent_success": "Email sent successfully"
+  },
+}

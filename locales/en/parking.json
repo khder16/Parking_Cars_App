@@ -1,0 +1,11 @@
+{
+    "missingInputs": "All inputs are required",
+    "parkingNotFound": "Parking not found",
+    "userNotValid": "User is not valid, please check the username",
+    "noEmptyParks": "No empty parks available",
+    "bookingFailed": "Booking failed",
+    "noActiveBooking": "No active parking booking found",
+    "noParkChosen": "You haven't chosen any park yet",
+    "parkingNotStarted": "Parking time hasn't started yet",
+    "parkingTimeEnded": "Parking time has ended"
+  }

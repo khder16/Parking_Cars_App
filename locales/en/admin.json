@@ -1,0 +1,6 @@
+{
+    "adminNotFound": "Admin not found",
+    "no_parks_found": "You don't have any parks",
+    "park_already_found": "Park Already Found",
+    "no_park_with_name": "There is no park with the specified name"
+  }

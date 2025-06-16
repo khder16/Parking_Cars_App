@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { addParking,bookingPark,ParkingTimer,ExpandParkingTime ,bookingRepairPark,CanceLBooking} from "../controllers/booking.js";
 import { getParkingLocations,getParkingSpots } from '../controllers/map.js'
-import {qrcodeGenerator,getQrParkingSpots} from '../controllers/QrCode.js';
-import { verifyToken } from '../middleware/verifyToken.js';
+import { qrcodeGenerator, getQrParkingSpots } from "../controllers/qr-code.js";
+import { verifyToken } from "../middleware/verify-token.js";
 
 const router = Router();
 

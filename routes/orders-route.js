@@ -1,7 +1,12 @@
 import { Router } from 'express'
 const router = Router()
-import { getAllParkingOrders, getAllRepairOrders, DeleteOrderParking, DeleteOrderRepair } from '../controllers/OrderControllers.js'
-import { verifyToken } from '../middleware/verifyToken.js'
+import {
+  getAllParkingOrders,
+  getAllRepairOrders,
+  DeleteOrderParking,
+  DeleteOrderRepair,
+} from "../controllers/order-controllers.js";
+import { verifyToken } from "../middleware/verify-token.js";
 router.route('/getParkingOrders').get(verifyToken, getAllParkingOrders)
 router.route('/getReapirOrders').get(verifyToken, getAllRepairOrders)
 router.route('/deleteOrder').delete(verifyToken, DeleteOrderParking)

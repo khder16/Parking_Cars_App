@@ -1,0 +1,14 @@
+{
+    "missingInputs": "الرجاء إدخال جميع المعلومات",
+    "parkingNotFound": "لم يتم ايجاد الكراج",
+    "userNotValid": "لم يتم تأكيد حساب المستخدم، الرجاء التحقق والمحاولة مرة أخرى",
+    "noEmptyParks": "لا يوجد أماكن متاحة حالياً",
+    "bookingFailed": "فشل الحجز",
+    "noActiveBooking": "لا يوجد حجز نشط",
+    "noParkChosen": "لم تقم باختيار أي مكان للركن بعد",
+    "parkingNotStarted": "وقت الحجز لم يبدأ بعد",
+    "parkingTimeEnded": "انتهى وقت الحجز",
+    "no_parks_found": "ليس لديك أي مواقف سيارات",
+    "park_already_found": "الموقف موجود بالفعل",
+    "no_park_with_name": "لا يوجد موقف بهذا الاسم المحدد"
+  }

@@ -1,0 +1,9 @@
+{
+    "internal_server_error": "خطأ داخلي في الخادم",
+    "done_successfully": "تم بنجاح",
+    "success": "تم بنجاح",
+    "not_found": "لم يتم العثور",
+    "unauthorized": "غير مصرح",
+    "forbidden": "ممنوع",
+    "validation_error": "خطأ في التحقق"
+  }

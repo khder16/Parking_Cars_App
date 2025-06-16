@@ -1,0 +1,139 @@
+{
+    "all_input_required": "جميع المدخلات مطلوبة",
+    "invalid_email": "بريد إلكتروني غير صالح",
+    "password_min_length": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "confirm_password_min_length": "يجب أن تكون كلمة المرور المؤكدة 6 أحرف على الأقل",
+    "passwords_not_match": "كلمة المرور وتأكيد كلمة المرور غير متطابقين",
+    "username_required": "اسم المستخدم مطلوب",
+    "first_name_required": "الاسم الأول مطلوب",
+    "last_name_required": "الاسم الأخير مطلوب",
+    "email_username_exists": "البريد الإلكتروني أو اسم المستخدم موجود بالفعل. يرجى إدخال بريد إلكتروني أو اسم مستخدم آخر.",
+    "registration_successful": "تم التسجيل بنجاح",
+    "internal_server_error": "خطأ داخلي في الخادم",
+    "provide_email_password": "يرجى تقديم البريد الإلكتروني وكلمة المرور لتسجيل الدخول",
+    "login_as_user": "الرجاء تسجيل الدخول كمستخدم",
+    "incorrect_email_password": "قد تكون كلمة المرور أو البريد الإلكتروني غير صحيحة",
+    "login_successful": "تم تسجيل الدخول بنجاح",
+    "admin_logged_in": "%s تم تسجيل دخوله",
+    "provide_full_info": "يرجى تقديم معلومات كاملة",
+    "admin_not_found": "المسؤول غير موجود",
+    "no_parks_found": "ليس لديك أي مواقف سيارات",
+    "park_already_found": "الموقف موجود بالفعل",
+    "no_park_with_name": "لا يوجد موقف بهذا الاسم المحدد",
+    "done_successfully": "تم بنجاح"
+  }
+
+  {
+    "parking": {
+      "missingInputs": "الرجاء إدخال جميع المعلومات",
+      "parkingNotFound": "لم يتم ايجاد الكراج",
+      "userNotValid": "لم يتم تأكيد حساب المستخدم، الرجاء التحقق والمحاولة مرة أخرى",
+      "noEmptyParks": "لا يوجد أماكن متاحة حالياً",
+      "bookingFailed": "فشل الحجز"
+    },
+    "repair": {
+      "userNameNotFound": "لم يتم ايجاد اسم المستخدم",
+      "parkNumberNotFound": "لم يتم ايجاد رقم الكراج",
+      "carNotFound": "لم يتم ايجاد سيارة لهذا المستخدم",
+      "invalidProblem": "الرجاء تقديم مشكلة صالحة",
+      "noEmptyRepairParks": "لا يوجد أماكن إصلاح متاحة",
+      "orderNotCreated": "لم يتم إنشاء الطلب"
+    },
+    "admin": {
+      "adminNotFound": "لم يتم ايجاد المدير"
+    },
+    "timer": {
+      "noActiveBooking": "لا يوجد حجز نشط",
+      "noParkChosen": "لم تقم باختيار أي مكان للركن بعد",
+      "parkingNotStarted": "وقت الحجز لم يبدأ بعد",
+      "parkingTimeEnded": "انتهى وقت الحجز"
+    },
+    "expand": {
+      "noUsername": "الرجاء تقديم اسم المستخدم",
+      "userNotFound": "لم يتم ايجاد المستخدم",
+      "noBookingYet": "لم تقم بالحجز بعد",
+      "parkNotFound": "لم يتم ايجاد الكراج",
+      "orderNotFound": "لم يتم ايجاد الطلب",
+      "success": "تم بنجاح"
+    },
+    "cancel": {
+      "emailNotFound": "لم يتم ايجاد البريد الإلكتروني",
+      "userNotFound": "لم يتم ايجاد المستخدم",
+      "noBookingYet": "لم تقم بالحجز بعد",
+      "success": "تم الإلغاء بنجاح",
+      "serverError": "خطأ في الخادم"
+    }
+  }
+
+
+  {
+    "repairOrders": {
+      "noOrders": "لا توجد أوامر إصلاح لعرضها",
+      "delete": {
+        "missingId": "الرجاء تقديم معرف الطلب",
+        "notFound": "لم يتم العثور على الطلب",
+        "success": "تم حذف الطلب بنجاح"
+      },
+      "update": {
+        "missingId": "لم يتم العثور على معرف الطلب",
+        "missingData": "الرجاء تقديم السعر وتاريخ الانتهاء",
+        "notFound": "تعذر العثور على الطلب",
+        "success": "تم تحديث حالة الطلب بنجاح"
+      },
+      "user": {
+        "notFound": "لم يتم العثور على المستخدم"
+      }
+    },
+    "notifications": {
+      "repairUpdate": "تم تحديث طلب الإصلاح الخاص بك بسعر {{price}}$ وسيكون جاهزًا بحلول {{date}}."
+    },
+    "errors": {
+      "serverError": "خطأ في الخادم الداخلي"
+    }
+  }
+
+  {
+    "pro_benefits": [
+      "35% خصم على كل الخدمات",
+      "تجربة خالية من الإعلانات",
+      "وصول إلى فريق الدعم الفني المخصص"
+    ],
+    "provide_full_info": "يرجى تقديم المعلومات الكاملة",
+    "user_not_found": "لم يتم العثور على المستخدم",
+    "pro_upgrade_success": "لقد أصبحت مستخدم محترف",
+    "internal_server_error": "خطأ في الخادم الداخلي"
+  }
+
+  {
+    "user":  "all_input_required": "جميع الحقول مطلوبة",
+    "invalid_email": "بريد إلكتروني غير صالح",
+    "password_length_error": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+    "confirm_password_length_error": "يجب أن تتكون كلمة المرور التأكيدية من 6 أحرف على الأقل",
+    "password_mismatch": "كلمة المرور وتأكيد كلمة المرور غير متطابقين",
+    "username_required": "اسم المستخدم مطلوب (بين 3 إلى 10 أحرف)",
+    "firstname_required": "الاسم الأول مطلوب (بين 1 إلى 10 أحرف)",
+    "lastname_required": "الاسم الأخير مطلوب (بين 1 إلى 10 أحرف)",
+    "email_exists": "البريد الإلكتروني مسجل بالفعل. يرجى استخدام بريد آخر",
+    "registration_success": "تم التسجيل بنجاح",
+    "login_credentials_required": "يرجى إدخال البريد الإلكتروني وكلمة المرور لتسجيل الدخول",
+    "admin_login_redirect": "يرجى تسجيل الدخول من خلال بوابة المدير",
+    "email_not_verified": "يرجى التحقق من بريدك الإلكتروني ثم المحاولة مرة أخرى",
+    "login_success": "تم تسجيل الدخول بنجاح",
+    "invalid_credentials": "كلمة المرور أو البريد الإلكتروني غير صحيحين",
+    "logout_success": "تم تسجيل الخروج بنجاح",
+    "code_length_error": "أدخل رمزًا مكونًا من 6 أرقام",
+    "user_not_found": "لم يتم العثور على المستخدم",
+    "incorrect_code": "الرمز غير صحيح",
+    "expired_code": "انتهت صلاحية الرمز. يرجى طلب رمز جديد",
+    "code_verified": "تم التحقق من الرمز بنجاح",
+    "update_not_found": "لم يتم العثور على المستخدم بعد التحديث",
+    "password_reset_email_sent": "تم إرسال بريد إعادة تعيين كلمة المرور",
+    "passwords_not_match": "كلمات المرور غير متطابقة",
+    "password_reset_success": "تم إعادة تعيين كلمة المرور بنجاح. يرجى تسجيل الدخول مرة أخرى",
+    "email_required": "يرجى تقديم البريد الإلكتروني",
+    "update_full_info_required": "يرجى تقديم جميع المعلومات المطلوبة",
+    "car_not_found": "تعذر العثور على السيارة المحددة لهذا المستخدم",
+    "unsupported_language": "لغة غير مدعومة. استخدم 'en' أو 'ar'",
+    "email_sent_success": "تم إرسال البريد الإلكتروني بنجاح"
+  }
+  

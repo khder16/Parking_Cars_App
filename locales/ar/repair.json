@@ -1,0 +1,10 @@
+{
+    "userNameNotFound": "لم يتم ايجاد اسم المستخدم",
+    "parkNumberNotFound": "لم يتم ايجاد رقم الكراج",
+    "carNotFound": "لم يتم ايجاد سيارة لهذا المستخدم",
+    "invalidProblem": "الرجاء تقديم مشكلة صالحة",
+    "noEmptyRepairParks": "لا يوجد أماكن إصلاح متاحة",
+    "orderNotCreated": "لم يتم إنشاء الطلب",
+    "noOrders": "لا توجد أوامر إصلاح لعرضها",
+    "repairUpdate": "تم تحديث طلب الإصلاح الخاص بك بسعر {{price}}$ وسيكون جاهزًا بحلول {{date}}."
+  }

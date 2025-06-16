@@ -1,8 +1,12 @@
 import { Router } from 'express';
 const router = Router()
-import { allRepairOrdersList, deleteRepairOrder, updateRepairOrderStatuse } from '../controllers/manageRepairOrders.js';
+import {
+  allRepairOrdersList,
+  deleteRepairOrder,
+  updateRepairOrderStatuse,
+} from "../controllers/manage-repair-orders.js";
 
-import { verifyToken } from '../middleware/verifyToken.js'
+import { verifyToken } from "../middleware/verify-token.js";
 
 
 router.get('/all-repair-orders', verifyToken, allRepairOrdersList);

@@ -1,0 +1,10 @@
+{
+    "userNameNotFound": "Username not found",
+    "parkNumberNotFound": "Park number not found",
+    "carNotFound": "Couldn't find car for this user",
+    "invalidProblem": "Please provide a valid problem",
+    "noEmptyRepairParks": "No empty repair parks available",
+    "orderNotCreated": "Order did not created",
+    "noOrders": "There are no repair orders to show"
+  }
+  

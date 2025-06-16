@@ -1,8 +1,8 @@
 import { StatusCodes } from "http-status-codes"
-import ParkingOrder from "../modules/ParkingOrder.js"
-import parking from "../modules/parking.js"
-import Admins from "../modules/Admins.js"
-import RepairOrder from "../modules/RepairOrder.js";
+import ParkingOrder from "../modules/parking-order.js";
+import parking from "../modules/parking.js";
+import Admins from "../modules/Admins.js";
+import RepairOrder from "../modules/repair-order.js";
 
 export const NumberOfParksByLocation = async (req, res) => {
   try {

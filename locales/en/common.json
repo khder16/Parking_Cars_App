@@ -1,0 +1,8 @@
+{
+    "internal_server_error": "Internal server error",
+    "not_found": "Resource not found",
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Forbidden",
+    "validation_error": "Validation error",
+    "success": "Operation completed successfully"
+  }

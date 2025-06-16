@@ -1,0 +1,11 @@
+{
+    "provide_username": "Please Provide User Name",
+    "no_parking_orders": "No Orders were Found To This user",
+    "no_repair_orders": "No Orders For This User",
+    "provide_order_id": "Please Provide Order ID",
+    "order_not_found": "Couldn't find the order",
+    "deleted_successfully": "Deleted Successfully",
+    "missingId": "Please provide order ID",
+    "missingData": "Please provide price and completion date",
+    "update_success": "Order status updated successfully"
+  }

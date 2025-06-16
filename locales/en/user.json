@@ -1,0 +1,12 @@
+{
+    "user_not_found": "User not found",
+    "update_not_found": "User not found after update",
+    "car_not_found": "Cannot find specified car for this user",
+    "update_full_info_required": "Please provide all required information",
+    "pro_upgrade_success": "You have become a pro user",
+    "pro_benefits": [
+      "35% Discount on every service",
+      "Ad-Free Experience",
+      "Access to our dedicated customer support team"
+    ]
+  }
